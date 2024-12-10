@@ -29,7 +29,7 @@ const randomProducts = (categories, n) => {
         id: faker.string.uuid(),
         name: faker.commerce.productName(),
         color: faker.color.rgb(),
-        price: faker.commerce.price(1, 100),
+        price: faker.commerce.price(1, 100000),
         description: faker.lorem.paragraph(),
         image: faker.image.urlPicsumPhotos(400, 400),
         quantity: faker.number.int({ min: 1, max: 100 }),
@@ -115,6 +115,7 @@ const main = () => {
     products: productList,
     users: [],
     carts: [],
+    orders: [],
   };
 
   fs.writeFile("db.json", JSON.stringify(db), () => {
